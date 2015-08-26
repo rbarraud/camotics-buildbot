@@ -1,9 +1,13 @@
 # Initial
   * Install Debian Wheezy to VM
   * Update to latest ``testing`` packages
-          sudo sed -i 's/wheezy/testing/g' /etc/apt/sources.list
-          sudo apt-get update
-          sudo apt-get dist-upgrade -y
+  
+```
+sudo sed -i 's/wheezy/testing/g' /etc/apt/sources.list
+sudo apt-get update
+sudo apt-get dist-upgrade -y
+```
+
   * Create user ``buildbot``
   * Add ``buildbot`` to group ``sudo``
   * Login as ``buildbot``
