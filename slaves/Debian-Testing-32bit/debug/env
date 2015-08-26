@@ -1,0 +1,6 @@
+export BUILDBOT_ROOT=$HOME/camotics/debug
+export SLAVE_NAME=Debian-Testing-32bit-debug
+export PATH=$PATH:$BUILDBOT_ROOT/$SLAVE_NAME/testHarness/build
+export SCONS_OPTIONS=$BUILDBOT_ROOT/scons-options.py
+
+. ../env

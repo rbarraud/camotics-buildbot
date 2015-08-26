@@ -1,0 +1,5 @@
+. ./env
+
+export BUILD_ROOT=$PWD/$SLAVE_NAME
+
+export CBANG_HOME=$BUILD_ROOT/cbang/build

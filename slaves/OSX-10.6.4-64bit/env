@@ -1,0 +1,15 @@
+# This messes up buildbot via twisted and zope
+unset MACOSX_DEPLOYMENT_TARGET
+
+# boost
+export BOOST_SOURCE=$HOME/build/boost_1_40_0
+
+export SCONS_JOBS=4
+export SCONS_OPTIONS=$BUILDBOT_ROOT/scons-options.py
+
+export PYTHONPATH=$PYTHONPATH:/usr/local/lib # For SCons
+export V8_HOME=$HOME/build/v8-3.14
+export OPENSSL_HOME=$HOME/build/openssl-1.0.1g
+export CAIRO_HOME=/opt/local
+
+export PATH=$PATH:$BUILDBOT_ROOT/$SLAVE_NAME/testHarness/build

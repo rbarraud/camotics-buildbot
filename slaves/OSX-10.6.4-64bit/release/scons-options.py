@@ -1,0 +1,9 @@
+sse3=1
+mostly_static=1
+osx_min_ver = '10.6'
+osx_sdk_root = '' # use current system sdk
+package_arch = 'x86_64'
+sign_keychain = 'developer2.keychain'
+sign_id_installer = 'Developer ID Installer: Joseph Coffland'
+sign_id_app = 'Developer ID Application: Joseph Coffland'
+sign_prefix = 'org.camotics.'

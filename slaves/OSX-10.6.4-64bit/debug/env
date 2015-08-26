@@ -1,0 +1,5 @@
+export BUILDBOT_ROOT=$HOME/camotics/debug
+export SLAVE_NAME=OSX-10.6.4-64bit-debug
+
+. ../env
+
