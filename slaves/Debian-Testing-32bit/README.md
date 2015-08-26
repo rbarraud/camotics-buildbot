@@ -1,13 +1,11 @@
 # Initial
   * Install Debian Wheezy to VM
   * Update to latest ``testing`` packages
-  
-```
-sudo sed -i 's/wheezy/testing/g' /etc/apt/sources.list
-sudo apt-get update
-sudo apt-get dist-upgrade -y
-```
-
+    ```
+    sudo sed -i 's/wheezy/testing/g' /etc/apt/sources.list
+    sudo apt-get update
+    sudo apt-get dist-upgrade -y
+    ```
   * Create user ``buildbot``
   * Add ``buildbot`` to group ``sudo``
   * Login as ``buildbot``
@@ -28,7 +26,7 @@ sudo python setup.py install
 cd ~/build
 git clone https://github.com/CauldronDevelopmentLLC/buildbot-config
 ln -s ~/build/buildbot-config/slaves/Debian-Testing-32bit ~/camotics
-vi ~/slave_passwd.txt # Enter slave password and save
+echo "<slave password>" > ~/slave_passwd.txt
 ```
 
 # Start slaves
