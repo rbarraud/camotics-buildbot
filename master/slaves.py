@@ -17,7 +17,7 @@ add_slave('Ubuntu-Precise-64bit', password, 'lin', '~/camotics',
 
 # Windows
 add_slave('Windows-XP-32bit', password, 'win',
-          'c:\\build\\buildbot-config\\slaves\\Windows-XP-32bit',
+          'c:\\buildbot-config\\slaves\\Windows-XP-32bit',
           configs = ['release', 'debug'])
 
 # OSX
