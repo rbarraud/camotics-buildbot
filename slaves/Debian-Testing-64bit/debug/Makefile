@@ -7,7 +7,7 @@
 # The 'reconfig' target will tell a buildmaster to reload its config file.
 
 start:
-	. ./env; mkdir -p $$SLAVE_NAME; twistd --no_save -y buildbot.tac
+	. ./env; mkdir -p $$SLAVE_NAME; twistd --no_save -ny buildbot.tac
 
 stop:
 	kill `cat twistd.pid`
