@@ -3,7 +3,7 @@ import os
 from twisted.application import service
 from buildbot.slave.bot import BuildSlave
 
-basedir = r'C:\Documents and Settings\buildbot\camotics\release'
+basedir = r'C:\buildbot-config\slaves\Windows-XP-32bit\release'
 buildmaster_host = '172.16.0.1'
 port = 9989
 slavename = 'Windows-XP-32bit-release'
