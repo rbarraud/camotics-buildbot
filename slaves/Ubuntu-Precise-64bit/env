@@ -1,1 +1,0 @@
-export CONFIG_SCRIPTS_HOME=$BUILDBOT_ROOT/$SLAVE_NAME/cbang/build/config-scripts

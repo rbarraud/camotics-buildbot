@@ -21,18 +21,19 @@ if [ ! -d "/host/$SLAVE" ]; then
 fi
 
 # Setup slave
-mkdir -p /slave/$SLAVE/info
-touch /slave/$SLAVE/info/host
-echo "Joseph Coffland <jcoffland@cauldrondevelopment.com>" \
-    > /slave/$SLAVE/info/admin
-cp -av /host/$SLAVE/* /slave/$SLAVE
-echo "$SLAVE_PASS" >/slave/$SLAVE/passwd.txt
 export NCORES=$(grep -c ^processor /proc/cpuinfo)
+export SLAVE_HOME=/slave/$SLAVE_MODE
+mkdir -p $SLAVE_HOME/$SLAVE_NAME-${SLAVE_MODE}
+mkdir -p $SLAVE_HOME/info
+touch $SLAVE_HOME/info/host
+echo "Joseph Coffland <jcoffland@cauldrondevelopment.com>" \
+    > $SLAVE_HOME/info/admin
+cp -av /host/$SLAVE/* $SLAVE_HOME/
+echo "$SLAVE_PASS" > $SLAVE_HOME/passwd.txt
 
 # Start slave
-cd /slave/$SLAVE
+cd $SLAVE_HOME
 export SLAVE_NAME=${SLAVE_NAME}-${SLAVE_MODE}
-mkdir -p $SLAVE_NAME
 . ./env &&
 twistd -ny /host/scripts/buildbot.tac
 echo "Done"

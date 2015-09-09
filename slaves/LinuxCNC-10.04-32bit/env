@@ -1,8 +1,0 @@
-export CONFIG_SCRIPTS_HOME=$BUILDBOT_ROOT/$SLAVE_NAME/cbang/build/config-scripts
-
-export BUILD_DIR=/home/buildbot/build
-export OPENSSL_HOME=$BUILD_DIR/openssl-1.0.1e/
-export V8_HOME=$BUILD_DIR/v8
-export V8_LIBPATH=$V8_HOME/out/native/obj.target/tools/gyp
-export QT4_DIR=/usr/local/Trolltech/Qt-4.8.5
-export PKG_CONFIG_PATH=$QT4_DIR/lib/pkgconfig/

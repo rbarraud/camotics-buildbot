@@ -48,30 +48,30 @@ if [ "$SLAVE_MODE" == "" ]; then usage "SLAVE_MODE not set"; fi
 SCRIPTS="$(dirname "$0")"
 SLAVE="$SLAVE_NAME/$SLAVE_MODE"
 TAG=camotics-$(echo "$SLAVE_NAME" | sed 's/\(.*\)/\L\1/;s/[^a-zA-Z0-9_-]//g')
+SLAVE_ID=${TAG}-${SLAVE_MODE}.id
 
 cd "$SCRIPTS"/..
 
 if [ "$SLAVE_CMD" != "" ]; then
-    if [ ! -e ${TAG}.id ]; then
+    if [ ! -e $SLAVE_ID ]; then
         echo "Slave ${SLAVE} does not appear to be running"
         exit 1
     fi
 
-    docker $SLAVE_CMD $(cat ${TAG}.id)
+    docker $SLAVE_CMD $(cat $SLAVE_ID)
     RET=$?
 
-    docker top $(cat ${TAG}.id) 2>/dev/null >/dev/null
+    docker top $(cat $SLAVE_ID) 2>/dev/null >/dev/null
     if [ $? -ne 0 ]; then
         echo "Container ended"
-        rm ${TAG}.id
+        rm $SLAVE_ID
     fi
 
     exit $RET
 fi
 
-if [ -e ${TAG}.id ]; then
-    SLAVE_ID=$(cat ${TAG}.id)
-    echo "Slave ${SLAVE} appears to be already running as $SLAVE_ID"
+if [ -e $SLAVE_ID ]; then
+    echo "Slave ${SLAVE} appears to be already running as $(cat $SLAVE_ID)"
     exit 1
 fi
 
@@ -92,6 +92,6 @@ if ! $SLAVE_BUILD; then
     if $SLAVE_FG; then
         $CMD
     else
-        $CMD > ${TAG}.id
+        $CMD > $SLAVE_ID
     fi
 fi

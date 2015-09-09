@@ -3,3 +3,4 @@
 \#*
 
 /master/passwd.txt
+slaves/*.id
