@@ -5,7 +5,6 @@ import pwd
 import shutil
 import filecmp
 
-owner = 'buildmaster'
 group = 'buildmaster'
 
 
