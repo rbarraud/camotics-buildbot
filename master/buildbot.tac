@@ -1,9 +1,10 @@
 # -*- python -*-
+import os
 
 from twisted.application import service
 from buildbot.master import BuildMaster
 
-basedir = '/home/buildbot/camotics-buildbot/master'
+basedir = os.getcwd()
 configfile = 'master.cfg'
 rotateLength = 10000000
 maxRotatedFiles = None
