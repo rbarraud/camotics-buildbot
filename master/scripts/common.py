@@ -5,8 +5,8 @@ import pwd
 import shutil
 import filecmp
 
-owner = 'root'
-group = 'www-data'
+owner = 'buildmaster'
+group = 'buildmaster'
 
 
 def parse_package_version(name):
