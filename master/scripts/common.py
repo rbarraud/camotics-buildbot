@@ -5,7 +5,7 @@ import pwd
 import shutil
 import filecmp
 
-group = 'buildmaster'
+group = 'www-data'
 
 
 def parse_package_version(name):
