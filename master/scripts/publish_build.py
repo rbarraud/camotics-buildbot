@@ -9,7 +9,7 @@ import inspect
 dir = os.path.dirname(inspect.getfile(inspect.currentframe()))
 execfile(dir + '/common.py')
 
-root = '/var/www/camotics.com/builds'
+root = '/home/buildmaster/builds'
 
 # Parse args
 if len(sys.argv) != 5:

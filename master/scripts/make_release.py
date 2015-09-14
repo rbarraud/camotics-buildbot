@@ -11,8 +11,8 @@ from optparse import OptionParser
 dir = os.path.dirname(inspect.getfile(inspect.currentframe()))
 execfile(dir + '/common.py')
 
-build_base = '/var/www/camotics.com/builds'
-release_base = '/var/www/camotics.com/http/releases'
+build_base = '/home/buildmaster/builds'
+release_base = '/home/buildmaster/releases'
 
 releases = {
     'alpha': (build_base, release_base + '/alpha'),
