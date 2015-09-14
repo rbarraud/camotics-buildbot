@@ -4,7 +4,7 @@ from twisted.application import service
 from buildbot.slave.bot import BuildSlave
 
 basedir = r'/Users/buildbot/camotics/debug'
-buildmaster_host = 'cauldrondevelopment.com'
+buildmaster_host = '192.168.10.15'
 port = 9989
 slavename = 'OSX-10.6.4-64bit-debug'
 passwd = open(os.path.expanduser('~/slave_passwd.txt')).read().strip()

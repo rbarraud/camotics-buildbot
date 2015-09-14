@@ -4,7 +4,7 @@ from twisted.application import service
 from buildbot.slave.bot import BuildSlave
 
 basedir = r'C:\\buildbot-config\slaves\Windows-XP-32bit\debug'
-buildmaster_host = '172.16.0.1'
+buildmaster_host = '192.168.10.15'
 port = 9989
 slavename = 'Windows-XP-32bit-debug'
 passwd = open(os.path.expanduser('~/slave_passwd.txt')).read().strip()

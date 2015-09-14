@@ -5,7 +5,7 @@ from twisted.application import service
 from buildbot.slave.bot import BuildSlave
 
 basedir = os.getcwd()
-buildmaster_host = '172.16.0.1'
+buildmaster_host = '192.168.10.15'
 port = 9989
 slavename = os.environ['SLAVE_NAME']
 passwd = open('passwd.txt', 'r').read().strip()
