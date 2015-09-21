@@ -15,9 +15,9 @@ build_base = '/home/buildmaster/builds'
 release_base = '/home/buildmaster/releases'
 
 releases = {
-    'alpha': (build_base, release_base + '/alpha'),
-    'beta': (release_base + '/alpha', release_base + '/beta'),
-    'public': (release_base + '/beta', release_base + '/public'),
+    'alpha':  (build_base, release_base + '/alpha'),
+    'beta':   (build_base, release_base + '/beta'),
+    'public': (build_base, release_base + '/public'),
     }
 
 
