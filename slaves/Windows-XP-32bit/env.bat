@@ -30,7 +30,7 @@ set PATH=%PATH%;C:\Python26;c:\Python26\scripts
 set PATH=%PATH%;%ProgramFiles%\gnuwin32\bin
 set PATH=%PATH%;%ProgramFiles%\NSIS\
 
-REM set CODE_SIGN_KEY=c:\build\certificate.pfx
-REM set CODE_SIGN_KEY_PASS_FILE=c:\build\cert_pass.txt
+set CODE_SIGN_KEY=c:\build\certificate.pfx
+set CODE_SIGN_KEY_PASS_FILE=c:\build\cert_pass.txt
 
 IF NOT EXIST %SLAVE_NAME% mkdir %SLAVE_NAME%
