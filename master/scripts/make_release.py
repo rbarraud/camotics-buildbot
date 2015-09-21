@@ -29,8 +29,10 @@ parser.add_option('-f', '--force', help = 'Force overwrite', default = False,
 parser.add_option('-b', '--build', help = 'Build mode, release or debug',
                   default = None, dest = 'build_mode', type = 'choice',
                   choices = ['release', 'debug'])
-parser.add_option('', '--test', help = 'Just print what would be done.',
+parser.add_option('-t', '--test', help = 'Just print what would be done.',
                   default = False, action = 'store_true', dest = 'test')
+parser.add_option('-v', '--verbose', help = 'Verbose output.',
+                  default = False, action = 'store_true', dest = 'verbose')
 options, args = parser.parse_args()
 
 
@@ -38,6 +40,8 @@ def find_builds(src, mode, project, version):
     base = '%s/%s/%s' % (src, mode, project)
     for build in os.listdir(base):
         fullpath = base + '/' + build
+
+        if options.verbose: print 'Checking', fullpath
 
         if os.path.isdir(fullpath) and \
                 re.match(r'^[^-]+-[^-]+-[^-]+$', build) and \
@@ -88,8 +92,9 @@ if len(args) != 3: parser.error('Missing positional arguments')
 project, version, release = args
 project = project.lower()
 
+if not re.match(r'^\d+\.\d+$', version):
+    parser.error('Invalid version "%s".  Must be <major>.<minor>' % version)
 if not release in releases: parser.error('Invalid release mode "%s"' % release)
-
 
 # Publish builds
 src, dst = releases[release]

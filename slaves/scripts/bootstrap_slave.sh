@@ -34,6 +34,7 @@ echo "$SLAVE_PASS" > $SLAVE_HOME/passwd.txt
 # Start slave
 cd $SLAVE_HOME
 export SLAVE_NAME=${SLAVE_NAME}-${SLAVE_MODE}
+rm -f twistd.pid
 . ./env &&
 twistd -ny /host/scripts/buildbot.tac
 echo "Done"
