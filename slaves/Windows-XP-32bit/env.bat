@@ -19,7 +19,7 @@ set V8_HOME=c:\build\v8
 set V8_LIBPATH=%V8_HOME%\build\Release\lib
 
 call "%ProgramFiles%\Microsoft Visual Studio 9.0\vc\bin\vcvars32.bat"
-call "%ProgramFiles%\Intel\ComposerXE-2011\bin\iclvars.bat" ia32
+call "%ProgramFiles%\Intel\Composer XE 2013 SP1\bin\iclvars.bat" ia32
 
 REM Windows SDK
 set PATH=%PATH%;%ProgramFiles%\Microsoft SDKs\Windows\v6.1\Bin
