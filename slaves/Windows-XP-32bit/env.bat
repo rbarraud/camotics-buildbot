@@ -1,7 +1,7 @@
 @echo off
 
-set BOOST_SOURCE=C:\build\boost_1_40_0
-set BOOST_VERSION=1.40
+set BOOST_SOURCE=C:\build\boost_1_59_0
+set BOOST_VERSION=1.59
 
 set GTK_HOME=c:\build\Gtk+
 set PKG_CONFIG=%GTK_HOME%\bin\pkg-config.exe
